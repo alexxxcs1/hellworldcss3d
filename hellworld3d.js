@@ -15,7 +15,6 @@ Hellworld.prototype =
         var num1 = parseInt(Math.random()*255+1);
         var num2 = parseInt(Math.random()*255+1);
         var num3 = parseInt(Math.random()*255+1);
-        console.log(num1,num2,num3,num1.toString(16)+''+num2.toString(16)+''+num3.toString(16),num1.toString(16).length,num2.toString(16).length,num3.toString(16).length);
         var num1str = num1.toString(16).length==1?'0'+num1.toString(16):num1.toString(16);
         var num2str = num2.toString(16).length==1?'0'+num2.toString(16):num2.toString(16);
         var num3str = num3.toString(16).length==1?'0'+num3.toString(16):num3.toString(16);
@@ -42,7 +41,6 @@ Hellworld.prototype =
                             // 4 前部
                             // 5 后部
                             // 6 立方体
-                        console.log(singleWidth,singleHeight);
                         
                         switch (self.data[i][j][x][z]) {
                             case 0:
