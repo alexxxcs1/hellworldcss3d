@@ -126,3 +126,11 @@ var hw = new Hellworld(data,document.getElementById('View'));
 ``
 hw.render();
 ``
+
+##示例
+
+http://packy.club/hellworldcss3d/
+
+##TODOLIST
+
+!增加平面材质渲染功能
