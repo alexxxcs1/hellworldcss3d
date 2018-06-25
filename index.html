@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html style="height:100%">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./hellworld3d.js"></script>
+</head>
+<style>
+
+    body
+    {
+        height: 100%;
+        
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Box
+    {
+        width: 800px;
+        height: 500px;
+        /* background-color: red; */
+        transform-style: preserve-3d;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .View
+    {
+        width: 500px;
+        height: 400px;
+        position: relative;
+        transform: rotateX(-25deg) rotateY(-10deg);
+        transform-style: preserve-3d;
+        animation: flash 20s infinite linear;
+    }
+    .Item
+    {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #333;
+        left: 50%;
+        top: 50%;
+        /* transform: translateX(-50%) translateY(-50%); */
+        transform-style: preserve-3d;
+    }
+    @-webkit-keyframes flash {
+        0%,
+        to {
+            transform: rotateX(-20deg) rotateY(-360deg);
+        }
+        100% {
+            transform: rotateX(-20deg) rotateY(360deg);
+        }
+    }
+</style>
+<body>
+    
+    <div class="Box">
+        <div class='View' id="View">
+
+        </div>
+    </div>
+
+</body>
+<script>
+
+    var data=[
+        [
+            [
+                [6],[6],[6],[6],[6],[6],
+            ],
+            [
+                [6],[6],[6],[6],[6],[6],
+            ],
+            [
+                [6],[6],[6],[6],[6],[6],
+            ],
+            [
+                [0],[0],[0],[0],[0],[0],
+            ],
+            [
+                [0],[0],[0],[0],[0],[0],
+            ],
+            [
+                [0],[0],[0],[0],[0],[0],
+            ],
+        ],
+        [
+            [
+                [6],[6],[6],[6],[6],[6],
+            ],
+            [
+                [6],[6],[6],[6],[6],[6],
+            ],
+            [
+                [null],[null],[6],[null],[null],[null],
+            ],
+            [
+                [null],[null],[null],[null],[null],[null],
+            ],
+            [
+                [null],[null],[null],[null],[null],[null],
+            ],
+            [
+                [null],[null],[null],[null],[null],[null],
+            ],
+        ],
+        [
+            [
+                [null],[null],[null],[null],[null],[null],
+            ],
+            [
+                [null],[null],[null],[null],[6],[null],
+            ],
+            [
+                [null],[null],[6],[null],[null],[null],
+            ],
+            [
+                [null],[null],[null],[6],[null],[null],
+            ],
+            [
+                [null],[null],[null],[null],[null],[null],
+            ],
+            [
+                [null],[null],[null],[null],[null],[null],
+            ],
+        ],
+        [
+            [
+                [6],[6],[6],[6],[6],[6],
+            ],
+            [
+                [null],[6],[null],[null],[6],[null],
+            ],
+            [
+                [null],[6],[6],[null],[null],[null],
+            ],
+            [
+                [null],[6],[6],[6],[null],[null],
+            ],
+            [
+                [null],[null],[null],[null],[null],[null],
+            ],
+            [
+                [null],[null],[null],[null],[null],[null],
+            ],
+        ]
+];
+
+    var hw = new Hellworld(data,document.getElementById('View'));
+    hw.render();
+
+</script>
+</html>
